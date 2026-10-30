@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* A. Define color variables */
+:root {
+  --background: #f5f5f7;
+  --surface: #ffffff;
+  --label: #1d1d1f;
+  --label-secondary: #6e6e73;
+  --separator: rgb(0 0 0 / 0.08);
+  --accent: #0071e3;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --surface: #1c1c1e;
+    --label: #f5f5f7;
+    --label-secondary: #98989d;
+    --separator: rgb(255 255 255 / 0.12);
+    --accent: #2997ff;
+  }
+}
+
+/* B. Register colors with Tailwind */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-label: var(--label);
+  --color-label-secondary: var(--label-secondary);
+  --color-separator: var(--separator);
+  --color-accent: var(--accent);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", system-ui, "Helvetica Neue", sans-serif;
+}
+
+/* C. Base styles */
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-background text-label font-sans antialiased;
+  }
+}
