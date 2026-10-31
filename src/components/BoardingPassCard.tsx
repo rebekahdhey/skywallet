@@ -14,7 +14,7 @@ function BoardingPassCard({ pass, onSelect }: Props) {
 
   return (
     <motion.div
-      className="w-full max-w-sm cursor-pointer overflow-hidden rounded-3xl text-white shadow-lg"
+      className="w-full cursor-pointer overflow-hidden rounded-3xl text-white shadow-lg"
       style={{ backgroundColor: pass.color }}
       onClick={() => onSelect(pass)}
       whileTap={{ scale: 0.97 }}
